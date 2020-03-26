@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    color: #242424;
+    line-height: 30px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    max-width: 1170px;
+    background: #242424;
+    margin: 0 auto;
+}
+.wrapper {
+    padding: 50px;
+    border-radius: 5px;
+    background: #eee;
+}
+.wrapper h2 {
+    margin-bottom: 20px;
+}
+
+.train  {
+    position: relative;
+}
+
+.train img {
+    position: absolute;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    animation: train 3s linear infinite;
+}
+
+@keyframes train {
+    from {
+        left: -50%;
+    }
+
+    to {
+        left: 130%;
+    }
+}
