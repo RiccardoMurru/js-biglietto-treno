@@ -10,18 +10,35 @@
  var distance;
  var age;
  var grossPrice;
+ var netPrice;
 
  // 1. Chiedere all'utente i km da percorrere e l'età
 
- distance = prompt('Quanti km vuoi percorrere?');
+ distance = parseFloat(prompt('Quanti km vuoi percorrere?'));
  console.log('distanza in km: ' + distance);
  
- age = prompt('Quanti anni hai?');
+ age = parseFloat(prompt('Quanti anni hai?'));
  console.log('età: ' + age)
 
  // 2. Calcolare prezzo del biglietto
 
  grossPrice = distance * .21;
  console.log('prezzo del biglietto senza sconto: € ' + grossPrice);
+
+ // 3. Applicare sconto
+
+ // se > 18, sconto = 20%
+ if (age < 18) {
+    netPrice = grossPrice - (grossPrice * .2);
+    console.log ('biglietto scontato del 20%: € ' + netPrice);
+ } else if (age > 65) {
+    // se > 65, sconto = 40%;
+    netPrice = grossPrice - (grossPrice * .4);
+    console.log ('biglietto scontato del 40%: € ' + netPrice);
+ } else {
+    // nessuno sconto applicato
+    netPrice = grossPrice;
+    console.log ('biglietto non scontato: € ' + netPrice);
+ }
 
  
